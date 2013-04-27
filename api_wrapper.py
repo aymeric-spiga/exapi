@@ -1,6 +1,9 @@
 
 ### A. Spiga -- LMD -- 03/07/2011
 
+import api
+import numpy as np
+
 def api_onelevel (  path_to_input   = './', \
                     input_name      = 'wrfout_d0?_????-??-??_??:00:00', \
                     path_to_output  = None, \
@@ -16,8 +19,6 @@ def api_onelevel (  path_to_input   = './', \
                     interp_level    = [-9999.], \
                     onelevel        = 0.020, \
                     nocall          = False ):
-    import api
-    import numpy as np
 
     if not path_to_output:  path_to_output = path_to_input
 
@@ -35,8 +36,6 @@ def api_onelevel (  path_to_input   = './', \
         zetemp[zelen] = -99999.
         interp_level = zetemp
         onelevel = -99999.
-
-    print input_name, output_name
 
     if nocall:     pass
     else:          api.api_main ( path_to_input, input_name, path_to_output, output_name, \
