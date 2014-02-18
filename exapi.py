@@ -3,6 +3,7 @@ from api_wrapper import api_onelevel
 from ppclass import separatenames,inspect
 from optparse import OptionParser ### TBR by argparse
 import numpy as np
+import sys
 # -----------------------------------------------------------------------
 # A simple script to call the API program to interpolate mesoscale files
 # ... NB: API_WRAPPER necessary with api compiled with f2py
@@ -99,5 +100,15 @@ for file in args:
     inspect(newname)
     print "EXAPI: OK. done with this file."
     
-
-
+####################################
+# save a .sh file with the command #
+####################################
+command = ""
+if opt.output is None:
+    opt.output = "exapi"
+for arg in sys.argv: command = command + arg + ' '
+try:
+    f = open(opt.output+'.sh','w')
+    f.write(command)
+except IOError:
+    print "!! WARNING !! pp.py command not saved. Probably do not have permission to write here."
