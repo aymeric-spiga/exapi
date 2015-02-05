@@ -2,7 +2,7 @@
 
 which f2py
 
-NETCDF=$HOME/PROGRAMS/netcdf-4.0.1-gfortran
+#NETCDF=$HOME/PROGRAMS/netcdf-4.0.1-gfortran
 echo $NETCDF
 
 f2py  -c -m api api.F90 --fcompiler=gnu95 \

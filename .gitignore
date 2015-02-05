@@ -2,3 +2,5 @@
 *.so
 logc
 loge
+*.log
+api/*
