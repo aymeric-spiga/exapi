@@ -1,4 +1,7 @@
 *.log
 *.so
 *.pyc
+*.pyf
 api/*
+NETCDF/*
+netcdf*
