@@ -30,7 +30,7 @@ parser.print_version()
 # ----------------------------------------
 parser.add_option('-v','--var',action='store',dest='var',type="string",default=None,help='Variables processed. Not used means all variables. tk,tpot,uvmet can be requested.')
 parser.add_option('-i','--interp',action='store',dest='itp',type="int",default=defitp,help='Mode: 2=press /  3=z-amr / 4=z-als (default)')
-parser.add_option('-l','--level',action='store',dest='lvl',type="string",default=deflvl,help='Levels: start[,stop,step] (-i 2: Pa)(-i 3,4: km)')
+parser.add_option('-l','--level',action='store',dest='lvl',type="string",default=deflvl,help='Levels: start[,stop,nlev] (-i 2: Pa)(-i 3,4: km)')
 parser.add_option('-o','--output',action='store',dest='output',type="string",default=None,help="name of output files")
 parser.add_option('-d','--directory',action='store',dest='folder',type="string",default=None,help="directory of output files")
 (opt,args) = parser.parse_args()
